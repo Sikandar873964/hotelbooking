@@ -3,14 +3,15 @@ import {
   getUser,
   getUsers,
 } from "../controllers/user.js";
+import { verifyAdmin, verifyToken, verifyUser } from "../utils/verifyToken.js";
 
 const router = express.Router();
 
 
 //GET
-router.get("/:id", getUser);
+router.get("/:id", verifyUser, getUser);
 
 //GET ALL
-router.get("/", getUsers);
+router.get("/", verifyAdmin, getUsers);
 
 export default router;
