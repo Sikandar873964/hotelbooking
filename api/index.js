@@ -4,7 +4,9 @@ import mongoose from "mongoose";
 import cors from "cors";
 import cookieParser from "cookie-parser";
 import authRoute from "./routes/auth.js";
-import userRoute from "./routes/users.js"
+import userRoute from "./routes/users.js";
+import hotelsRoute from "./routes/hotels.js";
+import roomsRoute from "./routes/rooms.js";
 
 
 
@@ -39,7 +41,9 @@ app.use(express.json());
 
 //routes
 app.use("/api/auth", authRoute);
-app.use("/api/users",userRoute)
+app.use("/api/users",userRoute);
+app.use("/api/hotels", hotelsRoute);
+app.use("/api/rooms", roomsRoute);
 
 
 // error handling middleware
