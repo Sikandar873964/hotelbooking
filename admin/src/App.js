@@ -1,10 +1,13 @@
+import { useContext } from "react";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import { AuthContext } from "./context/AuthContext";
+import { DarkModeContext } from "./context/darkModeContext";
+import { userColumns } from "./datatablesource";
+import Home from "./pages/home/Home";
+import List from "./pages/list/List";
 import Login from "./pages/login/Login";
 import "./style/dark.scss";
-import Home from "./pages/home/Home";
-import { useContext } from "react";
-import { DarkModeContext } from "./context/darkModeContext";
-import { AuthContext } from "./context/AuthContext";
+
 
 
 
@@ -33,6 +36,16 @@ function App() {
               }
             />
           </Route>
+          <Route path="users">
+              <Route
+                index
+                element={
+                  <ProtectedRoute>
+                    <List columns={userColumns} />
+                  </ProtectedRoute>
+                }
+              />
+            </Route>
         </Routes>
       </BrowserRouter>
       </div>
