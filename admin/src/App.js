@@ -5,9 +5,9 @@ import "./style/dark.scss";
 
 function App() {
   let user = 0
-  if (!user) {
-    return <Navigate to="/login" />;
-  }
+  // if (!user) {
+  //   return <Navigate to="/login" />;
+  // }
 
   return (
       <BrowserRouter>
