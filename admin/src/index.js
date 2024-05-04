@@ -4,7 +4,9 @@ import App from "./App";
 
 
 ReactDOM.render(
-        <App />
+    <DarkModeContextProvider>
+    <App />
+  </DarkModeContextProvider>
       ,
   document.getElementById("root")
 );
