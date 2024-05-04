@@ -4,6 +4,7 @@ import mongoose from "mongoose";
 import cors from "cors";
 import cookieParser from "cookie-parser";
 import authRoute from "./routes/auth.js";
+import userRoute from "./routes/users.js"
 
 
 
@@ -38,6 +39,7 @@ app.use(express.json());
 
 //routes
 app.use("/api/auth", authRoute);
+app.use("/api/users",userRoute)
 
 
 // error handling middleware
