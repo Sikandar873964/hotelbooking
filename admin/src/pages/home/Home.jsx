@@ -1,12 +1,9 @@
-import Sidebar from "../../components/sidebar/Sidebar";
-import Navbar from "../../components/navbar/Navbar";
-import "./home.scss";
-import Widget from "../../components/widget/Widget";
-import Featured from "../../components/featured/Featured";
-import Chart from "../../components/chart/Chart";
-import Table from "../../components/table/Table";
-import useFetch from "../../hooks/useFetch";
 import React, { useEffect, useState } from "react";
+import Navbar from "../../components/navbar/Navbar";
+import Sidebar from "../../components/sidebar/Sidebar";
+import Widget from "../../components/widget/Widget";
+import useFetch from "../../hooks/useFetch";
+import "./home.scss";
 const Home = () => {
   const {
     data: userData,
