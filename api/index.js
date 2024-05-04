@@ -3,6 +3,8 @@ import dotenv from "dotenv";
 import mongoose from "mongoose";
 import cors from "cors";
 import cookieParser from "cookie-parser";
+import authRoute from "./routes/auth.js";
+
 
 
 
@@ -32,6 +34,10 @@ const connect = async () => {
 app.use(cors());
 app.use(cookieParser());
 app.use(express.json());
+
+
+//routes
+app.use("/api/auth", authRoute);
 
 
 // error handling middleware
