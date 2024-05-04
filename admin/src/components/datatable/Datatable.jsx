@@ -31,7 +31,28 @@ const Datatable = ({ columns }) => {
     }
   };
 
-
+  const actionColumn = [
+    {
+      field: "action",
+      headerName: "Action",
+      width: 200,
+      renderCell: (params) => {
+        return (
+          <div className="cellAction">
+            <Link to="/users/test" style={{ textDecoration: "none" }}>
+              {/* <div className="viewButton">View</div> */}
+            </Link>
+            <div
+              className="deleteButton"
+              onClick={() => handleDelete(params.row._id)}
+            >
+              Delete
+            </div>
+          </div>
+        );
+      },
+    },
+  ];
   return (
     <div className="datatable">
       <div className="datatableTitle">
@@ -43,6 +64,7 @@ const Datatable = ({ columns }) => {
       <DataGrid
         className="datagrid"
         rows={list || []}
+        columns={columns.concat(actionColumn)}
         pageSize={9}
         rowsPerPageOptions={[9]}
         checkboxSelection
