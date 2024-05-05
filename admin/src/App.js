@@ -66,6 +66,16 @@ function App() {
                 }
               />
             </Route>
+            <Route path="hotels">
+              <Route
+                index
+                element={
+                  <ProtectedRoute>
+                    <List columns={hotelColumns} />
+                  </ProtectedRoute>
+                }
+              />
+            </Route>
         </Routes>
       </BrowserRouter>
       </div>
