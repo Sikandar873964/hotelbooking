@@ -5,6 +5,8 @@ import { useState } from "react";
 import { hotelInputs } from "../../formSource";
 import useFetch from "../../hooks/useFetch";
 import axios from "axios";
+import "./newHotel.scss";
+
 
 const NewHotel = () => {
   const [files, setFiles] = useState("");
