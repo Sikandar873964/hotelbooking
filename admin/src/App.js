@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { AuthContext } from "./context/AuthContext";
 import { DarkModeContext } from "./context/darkModeContext";
-import { userColumns ,hotelColumns} from "./datatablesource";
+import { userColumns ,hotelColumns,roomColumns} from "./datatablesource";
 import Home from "./pages/home/Home";
 import List from "./pages/list/List";
 import Login from "./pages/login/Login";
@@ -93,6 +93,17 @@ function App() {
                   </ProtectedRoute>
                 }
               />
+            </Route>
+            <Route path="rooms">
+              <Route
+                index
+                element={
+                  <ProtectedRoute>
+                    <List columns={roomColumns} />
+                  </ProtectedRoute>
+                }
+              />
+              
             </Route>
         </Routes>
       </BrowserRouter>
