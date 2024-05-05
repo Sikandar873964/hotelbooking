@@ -11,6 +11,8 @@ import Single from "./pages/single/Single";
 import New from "./pages/new/New";
 import {  userInputs } from "./formSource";
 import NewHotel from "./pages/newHotel/NewHotel";
+import NewRoom from "./pages/newRoom/NewRoom";
+
 
 
 
@@ -103,7 +105,22 @@ function App() {
                   </ProtectedRoute>
                 }
               />
-              
+              <Route
+                path=":productId"
+                element={
+                  <ProtectedRoute>
+                    <Single />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="new"
+                element={
+                  <ProtectedRoute>
+                    <NewRoom />
+                  </ProtectedRoute>
+                }
+              />
             </Route>
         </Routes>
       </BrowserRouter>
