@@ -75,6 +75,14 @@ function App() {
                   </ProtectedRoute>
                 }
               />
+              <Route
+                path=":productId"
+                element={
+                  <ProtectedRoute>
+                    <Single />
+                  </ProtectedRoute>
+                }
+              />
             </Route>
         </Routes>
       </BrowserRouter>
