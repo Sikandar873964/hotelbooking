@@ -10,6 +10,8 @@ import "./style/dark.scss";
 import Single from "./pages/single/Single";
 import New from "./pages/new/New";
 import {  userInputs } from "./formSource";
+import NewHotel from "./pages/newHotel/NewHotel";
+
 
 
 
@@ -83,7 +85,14 @@ function App() {
                   </ProtectedRoute>
                 }
               />
-              
+              <Route
+                path="new"
+                element={
+                  <ProtectedRoute>
+                    <NewHotel />
+                  </ProtectedRoute>
+                }
+              />
             </Route>
         </Routes>
       </BrowserRouter>
