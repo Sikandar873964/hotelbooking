@@ -45,6 +45,7 @@ function App() {
                   </ProtectedRoute>
                 }
               />
+              
             </Route>
         </Routes>
       </BrowserRouter>
