@@ -8,6 +8,9 @@ import List from "./pages/list/List";
 import Login from "./pages/login/Login";
 import "./style/dark.scss";
 import Single from "./pages/single/Single";
+import New from "./pages/new/New";
+import {  userInputs } from "./formSource";
+
 
 
 
@@ -54,7 +57,14 @@ function App() {
                   </ProtectedRoute>
                 }
               />
-              
+              <Route
+                path="new"
+                element={
+                  <ProtectedRoute>
+                    <New inputs={userInputs} title="Add New User" />
+                  </ProtectedRoute>
+                }
+              />
             </Route>
         </Routes>
       </BrowserRouter>
