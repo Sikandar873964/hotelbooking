@@ -3,11 +3,12 @@ import {
   getHotels,
   createHotel,
   updateHotel,
-  updateHotel
+  updateHotel,
+  getHotel
 } from "../controllers/hotel.js";
 const router = express.Router();
 
-// get all htels
+// GET ALL HOTELS
 router.get("/", getHotels);
 
 //CREATE
@@ -18,6 +19,9 @@ router.put("/:id", verifyAdmin, updateHotel);
 
 //DELETE
 router.delete("/:id", verifyAdmin, deleteHotel);
+
+//GET HOTEL BY ID
+router.get("/find/:id", getHotel);
 
 
 export default router;
