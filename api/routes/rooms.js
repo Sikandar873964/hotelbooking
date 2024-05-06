@@ -2,7 +2,8 @@ import express from "express";
 import {
   getRooms,getRoom,
   deleteRoom,
-  updateRoom
+  updateRoom,
+  updateRoomAvailability
 } from "../controllers/room.js";
 import { verifyAdmin } from "../utils/verifyToken.js";
 
@@ -20,6 +21,9 @@ router.delete("/:id/:hotelid", verifyAdmin, deleteRoom);
 
 //UPDATE BY ROOM BY ID
 router.put("/:id", verifyAdmin, updateRoom);
+
+//UPDATE ROOM AVAILABILITY
+router.put("/availability/:id", updateRoomAvailability);
 
 
 export default router;
