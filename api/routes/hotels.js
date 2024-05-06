@@ -3,12 +3,15 @@ import {
   getHotels,
   createHotel,
   updateHotel,
-  updateHotel,
   getHotel,
   countByCity,
   countByType,
-  getHotelRooms
+  getHotelRooms,
+  deleteHotel
 } from "../controllers/hotel.js";
+import { verifyAdmin } from "../utils/verifyToken.js";
+
+
 const router = express.Router();
 
 // GET ALL HOTELS
