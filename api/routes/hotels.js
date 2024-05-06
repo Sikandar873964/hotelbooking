@@ -1,7 +1,8 @@
 import express from "express";
 import {
   getHotels,
-  createHotel
+  createHotel,
+  updateHotel
 } from "../controllers/hotel.js";
 const router = express.Router();
 
@@ -10,5 +11,9 @@ router.get("/", getHotels);
 
 //CREATE
 router.post("/", verifyAdmin, createHotel);
+
+//UPDATE
+router.put("/:id", verifyAdmin, updateHotel);
+
 
 export default router;
