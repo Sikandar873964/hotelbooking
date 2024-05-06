@@ -59,6 +59,10 @@ app.use((err, req, res, next) => {
     });
   });
 
+  app.get('/',(req,res)=>{
+    res.json({status:'api is running'})
+  })
+  
 // main app run  
 app.listen(8800, () => {
     connect();
