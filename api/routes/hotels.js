@@ -23,5 +23,7 @@ router.delete("/:id", verifyAdmin, deleteHotel);
 //GET HOTEL BY ID
 router.get("/find/:id", getHotel);
 
+//GET HOTEL COUNT BY CITY
+router.get("/countByCity", countByCity);
 
 export default router;
