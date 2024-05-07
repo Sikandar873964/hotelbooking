@@ -53,7 +53,7 @@ const NewHotel = () => {
         photos: list,
       };
 
-      await axios.post(`${process.env.PUBLIC_BACKEND_URL}/hotels`, newhotel);
+      await axios.post(`${process.env.REACT_APP__BACKEND_URL}/hotels`, newhotel);
     } catch (err) {
       console.log(err);
     }

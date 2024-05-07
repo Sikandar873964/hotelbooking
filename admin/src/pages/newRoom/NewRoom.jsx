@@ -23,7 +23,7 @@ const NewRoom = () => {
     const roomNumbers = rooms.split(",").map((room) => ({ number: room }));
     try {
       console.log(hotelId);
-      await axios.post(`${process.env.PUBLIC_BACKEND_URL}/rooms/${hotelId}`, { ...info, roomNumbers });
+      await axios.post(`${process.env.REACT_APP__BACKEND_URL}/rooms/${hotelId}`, { ...info, roomNumbers });
     } catch (err) {
       console.log(err);
     }
