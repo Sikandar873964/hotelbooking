@@ -67,7 +67,7 @@ const Reserve = ({ setOpen, hotelId }) => {
       );
 
       setOpen(false);
-      const res = await axios.post("http://localhost:8800/send-email", {
+      const res = await axios.post("https://hotelbooking-t6c1.onrender.com/api/send-email", {
         userEmail: user.email,
         selectedRooms,
       });

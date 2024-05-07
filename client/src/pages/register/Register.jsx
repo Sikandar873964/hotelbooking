@@ -33,7 +33,7 @@ const Register = () => {
   const handleRegister = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:8800/api/auth/register",
+        "https://hotelbooking-t6c1.onrender.com/api/auth/register",
         formData
       );
       console.log(response.data);

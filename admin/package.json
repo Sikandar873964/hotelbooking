@@ -46,7 +46,7 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://hotelbooking-production-6862.up.railway.app/api",
+  "proxy": "https://hotelbooking-t6c1.onrender.com/api",
   "main": "index.js",
   "license": "MIT"
 }
