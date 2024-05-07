@@ -48,7 +48,6 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://hotelbooking-t6c1.onrender.com/api",
   "devDependencies": {
     "tailwindcss": "^3.4.1"
   },
