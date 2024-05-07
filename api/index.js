@@ -7,6 +7,7 @@ import authRoute from "./routes/auth.js";
 import userRoute from "./routes/users.js";
 import hotelsRoute from "./routes/hotels.js";
 import roomsRoute from "./routes/rooms.js";
+import nodemailer from "nodemailer";
 
 
 
@@ -62,7 +63,32 @@ app.use((err, req, res, next) => {
   app.get('/',(req,res)=>{
     res.json({status:'api is running'})
   })
+
+  app.post("/send-email", async (req, res) => {
+    const { userEmail } = req.body;
+    const transporter = nodemailer.createTransport({
+      service: "gmail",
   
+      auth: {
+        user: "adeelsaleemppp@gmail.com",
+        pass: "ndis klji lxhg lcqh",
+      },
+    });
+    try {
+      const info = await transporter.sendMail({
+        from: "sikandarbooking@gmail.com",
+        to: userEmail,
+        subject: "Reservation Confirmation",
+        text: `Thank you for your reservation! using our website`,
+      });
+  
+      console.log("Email sent: ", info.response);
+      res.status(200).json({ message: "Email sent successfully!" });
+    } catch (error) {
+      console.error("Error sending email: ", error);
+      res.status(500).json({ error: "Failed to send email." });
+    }
+  });
 // main app run  
 app.listen(8800, () => {
     connect();
